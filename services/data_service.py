@@ -1,5 +1,4 @@
 import requests
-from config import Config
 from models.data_model import DataModel
 
 def fetch_and_store_data(sheet_name, table_name):
