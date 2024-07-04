@@ -1,8 +1,13 @@
 from flask_restful import Resource
 from services.analysis_service import analyze_data, get_analysis_by_id
+from flask import request
 
 class DataAnalysisResource(Resource):
-    def post(self, data_id):
+    def post(self):
+        data_id = request.args.get('dataId')
+        if not data_id:
+            return {"message": "Invalid data ID"}, 400
+        
         analysis_id = analyze_data(data_id)
         if not analysis_id:
             return {"message": "Analysis failed"}, 500
