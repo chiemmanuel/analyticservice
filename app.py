@@ -10,8 +10,8 @@ app.config.from_object(Config)
 api = Api(app)
 
 api.add_resource(DataFetchResource, '/fetch-data')
-api.add_resource(DataAnalysisResource, '/analyze/<analysis_id>')
-api.add_resource(AnalysisDetailResource, '/analyze/<analysis_id>')
+api.add_resource(DataAnalysisResource, '/analyze')
+api.add_resource(AnalysisDetailResource, '/analysis/<analysis_id>')
 api.add_resource(VisualizationResource, '/visualize/<analysis_id>')
 
 if __name__ == '__main__':
