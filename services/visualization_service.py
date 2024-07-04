@@ -3,7 +3,6 @@ from models.data_model import DataModel
 import base64
 from io import BytesIO
 import pandas as pd
-
 import matplotlib.pyplot as plt
 
 def generate_visualization(analysis_id):
