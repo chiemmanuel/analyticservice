@@ -9,10 +9,10 @@ app = Flask(__name__)
 app.config.from_object(Config)
 api = Api(app)
 
-api.add_resource(DataFetchResource, '/fetch-data')
-api.add_resource(DataAnalysisResource, '/analyze')
-api.add_resource(AnalysisDetailResource, '/analysis/<analysis_id>')
-api.add_resource(VisualizationResource, '/visualize/<analysis_id>')
+api.add_resource(DataFetchResource, '/analysisApi/fetch-data')
+api.add_resource(DataAnalysisResource, '/analysisApi/analyze')
+api.add_resource(AnalysisDetailResource, '/analysisApi/analysis/<analysis_id>')
+api.add_resource(VisualizationResource, '/analysisApi/visualize/<analysis_id>')
 
 if __name__ == '__main__':
     app.run(port=app.config['PORT'])
