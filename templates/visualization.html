@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Data Visualization</h1>
+    <div class="visualization">
+        <img src="data:image/png;base64,{{ visualization }}" alt="Data Visualization">
+    </div>
+    
+    <h2>Analysis Results</h2>
+    <div class="analysis-section">
+        <h3>Mean Values</h3>
+        <ul>
+            {% for key, value in summary.mean.items() %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <div class="analysis-section">
+        <h3>Median Values</h3>
+        <ul>
+            {% for key, value in summary.median.items() %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <div class="analysis-section">
+        <h3>Standard Deviation</h3>
+        <ul>
+            {% for key, value in summary.std_dev.items() %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <div class="analysis-section">
+        <h3>Skewness</h3>
+        <ul>
+            {% for key, value in summary.skewness.items() %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <div class="analysis-section">
+        <h3>Kurtosis</h3>
+        <ul>
+            {% for key, value in summary.kurtosis.items() %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <div class="analysis-section">
+        <h3>Correlation Matrix</h3>
+        <ul>
+            {% for key, value in summary.correlation.items() %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <div class="analysis-section">
+        <h3>Covariance Matrix</h3>
+        <ul>
+            {% for key, value in summary.covariance.items() %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>
