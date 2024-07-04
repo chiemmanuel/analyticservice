@@ -1,4 +1,3 @@
-import numpy as np
 import pandas as pd
 from models.analysis_model import AnalysisModel
 from models.data_model import DataModel
