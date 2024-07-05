@@ -6,8 +6,10 @@ def analyze_data(data_id):
     data_record = DataModel.get_data(data_id)
     if not data_record:
         return None
-    
-    df = pd.DataFrame(data_record['data'])
+    data_values = [row['values'] for row in data_record['data']]
+    df = pd.DataFrame(data_values)
+
+    df.columns = [f"col_{i}" for i in range(len(df.columns))]
     
     analysis_result = {
         "summary": {
