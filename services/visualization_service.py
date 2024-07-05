@@ -33,8 +33,6 @@ def generate_visualization(analysis_id):
         pd.Series(summary.get('skewness', {})).plot(kind='bar', ax=axes[2, 0], title="Skewness")
         pd.Series(summary.get('kurtosis', {})).plot(kind='bar', ax=axes[2, 1], title="Kurtosis")
         
-        # Correlation and covariance matrix plots (if required)
-        # These can be added as additional plots if needed.
         
         # Save the plot as an image
         img = BytesIO()
