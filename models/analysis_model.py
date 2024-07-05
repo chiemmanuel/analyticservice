@@ -5,6 +5,12 @@ mongo = PyMongo()
 
 class AnalysisModel:
     @staticmethod
+    def init_app(app):
+        mongo.init_app(app)
+        if "analyses" not in mongo.db.list_collection_names():
+            mongo.db.create_collection("analyses")
+
+    @staticmethod
     def save_analysis(data):
         return mongo.db.analyses.insert_one(data).inserted_id
 
