@@ -2,9 +2,9 @@ import requests
 from config import Config
 from models.data_model import DataModel
 
-def fetch_and_store_data(sheet_name, table_name):
+def fetch_and_store_data(sheet_name, table_name, email):
     try:
-        email = Config.EMAIL
+        email = email or Config.DEFAULT_EMAIL
         session_url = f"http://localhost:8001/excel_sheets/create_session?email={email}"
         auth_response = requests.post(session_url)
         if auth_response.status_code != 200:

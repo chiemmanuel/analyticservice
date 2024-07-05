@@ -6,11 +6,12 @@ class DataFetchResource(Resource):
     def get(self):
         sheet_name = request.args.get('sheetName')
         table_name = request.args.get('tableName')
+        email = request.args.get('email')
         
         if not sheet_name or not table_name:
             return {"message": "Invalid sheet name or table name"}, 400
         
-        data_id = fetch_and_store_data(sheet_name, table_name)
+        data_id = fetch_and_store_data(sheet_name, table_name, email)
         
         if not data_id:
             return {"message": "Failed to fetch or store data"}, 500
