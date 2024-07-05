@@ -15,11 +15,13 @@ The server will start at `http://127.0.0.1:5000` (or the port specified in the `
 
 - **Fetch Data**: Fetch data from an external service and store it temporarily.
     ```http
-    GET /analysisApi/fetch-data?sheetName=<sheetName>&tableName=<tableName>
+    GET /analysisApi/fetch-data?sheetName=<sheetName>&tableName=<tableName>&email=<email>
     ```
     - **Parameters**: 
         - `sheetName` (query param): Name of the sheet to fetch data from.
         - `tableName` (query param): Name of the table to fetch data from.
+        - `email` (query param): email to create graphApi session.
+
     - **Response**:
         - `200 OK`: Returns `data_id` which can be used for analysis.
         - `400 Bad Request`: If sheet name or table name is not provided.
