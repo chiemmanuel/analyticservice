@@ -9,4 +9,4 @@ class VisualizationResource(Resource):
         analysis_details = generate_visualization(analysis_id)
         if not analysis_details:
             return {"message": "Visualization not available"}, 404
-        return render_template('visualization.html', **analysis_details)
+        return {"data": analysis_details}
