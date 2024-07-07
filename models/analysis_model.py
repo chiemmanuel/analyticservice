@@ -16,4 +16,6 @@ class AnalysisModel:
 
     @staticmethod
     def get_analysis(analysis_id):
-        return mongo.db.analyses.find_one({"_id": ObjectId(analysis_id)})
+        analysis = mongo.db.analyses.find_one({"_id": ObjectId(analysis_id)})
+        analysis["_id"] = str(analysis["_id"])
+        return analysis
