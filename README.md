@@ -1,5 +1,8 @@
 # analyticservice
-Micro service for data analysis and visualization using python
+This project is a microservice that allows users to fetch data using a call to another microservice, analyze this data and visualize it.
+The API provides endpoints to fetch, analyze and visualize data.
+
+This service is intended to be used in conjunction with the [excel service](https://github.com/Travis-Berthrong/excelservice) (Travis Berthrong) which uses the data in the excel workbook to perform data analysis and visualization. A core service (Ilia Tiskin) is used to provide a common public-facing interface for the two services
 
 # Dependencies
 pip install flask flask_pymongo flask_restful requests pandas matplotlib
